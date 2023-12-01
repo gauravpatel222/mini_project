@@ -1,0 +1,70 @@
+<%- include('./partials/header') %>
+
+<%- include('./partials/navbar') %>    
+<%- include('./partials/flash') %>   
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        
+       .body{
+            text-align: center;
+            max-width: 1280px;
+            align-items: center;
+            background-color: #fff;
+            padding:3rem;
+            margin:3rem;
+            
+        }
+    </style>
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="/public/css/style.css">
+ </head>
+ <body>
+ 
+    <section class="body">
+     
+   
+      
+     
+    
+   
+    
+      
+        
+     
+     </div>
+    </section>
+   <div class="row">
+    <% data.meals.forEach(meal => { %>
+    <div class="col">
+   
+       <div class="card" data-id="<%=meal.idMeal%>" style="width: 18rem;">
+  <img src="<%= meal.strMealThumb%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="mb-2 card-body">
+    <a href="/home/<%=meal.idMeal%>" class="mb-2 btn btn-dark"><%= meal.strMeal%></a>
+    <a href="/Review/<%=meal.idmeal%>"class="btn btn-dark">Reviews</a>
+ <form action="/favourites/<%=meal.idMeal%>">    
+        <button type="submit" class="btn btn-primary">Add to favourites</button>
+</form>
+  </div>
+</div>
+        
+
+        </div>
+      <% }); %>
+    </div>
+ 
+  
+        
+       
+  
+           

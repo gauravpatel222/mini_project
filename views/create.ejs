@@ -1,0 +1,93 @@
+<!-- views/createMeal.ejs -->
+<%- include('./partials/header') %>
+
+<%- include('./partials/navbar') %>    
+<%- include('./partials/flash') %>   
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Meal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Create a New Meal</h2>
+
+    <form action="/create" method="POST">
+      <label for="mealId">Meal ID:</label>
+      <input type="text" id="mealId" name="mealId" required>
+
+      <label for="userName">User Name:</label>
+      <input type="text" id="userName" name="userName" required>
+
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" name="userId" required>
+
+      <label for="recipeName">Recipe Name:</label>
+      <input type="text" id="recipeName" name="recipeName" required>
+
+      <label for="recipeIngredients">Recipe Ingredients:</label>
+      <textarea id="recipeIngredients" name="recipeIngredients" rows="4" required></textarea>
+
+      <label for="recipeInstructions">Recipe Instructions:</label>
+      <textarea id="recipeInstructions" name="recipeInstructions" rows="4" required></textarea>
+
+      <label for="youtubeVideoLink">YouTube Video Link:</label>
+      <input type="text" id="youtubeVideoLink" name="youtubeVideoLink" required>
+
+      <button type="submit">Create Meal</button>
+    </form>
+  </div>
+
+</body>
+</html>
